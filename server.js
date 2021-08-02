@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors')
 
 const server = express();
 
@@ -6,6 +7,7 @@ server.listen(3001, () => {
   console.log("Server running on port 3001");
 });
 
+server.use(cors())
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
 
